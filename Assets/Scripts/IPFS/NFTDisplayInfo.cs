@@ -12,25 +12,15 @@ public class NFTDisplayInfo : MonoBehaviour
      NFTData M_Data;
 
     [SerializeField]
-    TMP_Text FMText;
+    Text CoinsText;
 
-    //This image will be used for the attribute bar of the NFT
-    Image image;
-
-    void Awake()
-    {
-        image = GetComponent<Image>();
-    }
-
-
-
-
+  
     public void Update()
     {
         //If the Metadat from IPFS was retrieved successfully, assign the values to variables
         if (M_Data.DataCaptured)
         {
-            FMText.text = M_Data.GetName().ToString();
+           
 
             List<NFTstorage.ERC721.Attribute> nAttributes = new List<NFTstorage.ERC721.Attribute>();
             nAttributes = M_Data.GetAttributes();
@@ -38,10 +28,11 @@ public class NFTDisplayInfo : MonoBehaviour
             string trait = nAttributes[0].trait_type;
             string value = nAttributes[0].value.ToString();
 
-            int value1 = int.Parse(value);
+            //int value1 = int.Parse(value);
 
             // this will show the level of the attributes
-            image.fillAmount = value1;
+            
+            CoinsText.text = "Coins: " + value;
 
 
         }

@@ -165,4 +165,6 @@ MonoBehaviour:
     m_NextInstanceId: 3
     m_RegisteredServiceTypeRefs:
     - UnityEditor.AddressableAssets.HostingServices.HttpHostingService, Unity.Addressables.Editor
-    m_GlobalProfileVariablesInfos: []
+    m_GlobalProfileVariablesInfos:
+    - key: PrivateIpAddress
+      value: 172.20.10.4

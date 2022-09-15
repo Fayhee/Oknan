@@ -12,7 +12,7 @@ namespace Oknan
         private GameObject GlobalManager;
         public GameObject pauseMenu;
         public GameObject nFTMenu;
-        public GameObject MintNFTMenu;
+        public GameObject NFTDataMenu;
         public GameObject VoucherMintNFTMenu;
         public GameObject VerifyMenu;
         public GameObject SignMenu;
@@ -69,10 +69,10 @@ namespace Oknan
             }
         }
 
-        public void OpenMintNFTMenu()
+        public void OpenNFTDataMenu()
         {
             FindObjectOfType<AudioManager2>().Play("Pop");
-            MintNFTMenu.SetActive(true);
+            NFTDataMenu.SetActive(true);
         }
 
         public void OpenVoucherMintNFTMenu()
@@ -126,11 +126,11 @@ namespace Oknan
             VoucherMenu.SetActive(false);
         }
 
-        public void CloseMintNFTMenu()
+        public void CloseNFTDataMenu()
         {
             FindObjectOfType<AudioManager2>().Play("Pop");
             CoinsText.text = "Coins: " + GlobalManager.GetComponent<Global>().globalCoins.ToString();
-            MintNFTMenu.SetActive(false);
+            NFTDataMenu.SetActive(false);
         }
 
         async public void CloseVoucherMintNFTMenu()
