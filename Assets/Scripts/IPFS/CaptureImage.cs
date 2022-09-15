@@ -18,8 +18,8 @@ public class CaptureImage : MonoBehaviour
     public TMP_Text hashText;
 
 
-    private string theName = "Eco Sustainability Idol";
-    private string description = "This is an award for Being a champion in enviromental sustainability";
+    private string theName = "Oknan Idol";
+    private string description = "This is an award for Being a champion in Oknan Royale Game";
 
     [SerializeField]
     private NFTstorage.ERC721.NftMetaData nFTMetadata;
@@ -70,7 +70,7 @@ public class CaptureImage : MonoBehaviour
             nFTMetadata.SetName(theName);
 
             //Intatiates different attributes from the NFTstorage.ERC721.Attribute class
-            attribute1.SetAttributes("Green House Fader", "95");
+            attribute1.SetAttributes("Green pand Fader", "95");
             attribute2.SetAttributes("Biodervesity Keeper", "25");
             attribute3.SetAttributes("Forester", "13");
 

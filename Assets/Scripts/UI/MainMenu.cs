@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Oknan
 {
@@ -10,6 +11,7 @@ namespace Oknan
         
         private GameObject GlobalManager;
         public GameObject pauseMenu;
+        public GameObject nFTMenu;
         public GameObject MintNFTMenu;
         public GameObject VoucherMintNFTMenu;
         public GameObject VerifyMenu;
@@ -95,6 +97,7 @@ namespace Oknan
         {
             FindObjectOfType<AudioManager2>().Play("Pop");
             TransferMenu.SetActive(true);
+            Time.timeScale = 0;
         }
 
         public void OpenContractMenu()
@@ -108,6 +111,7 @@ namespace Oknan
         {
             FindObjectOfType<AudioManager2>().Play("Pop");
             MarketplaceMenu.SetActive(true);
+            Time.timeScale = 0;
         }
         // menu close buttons, usually you would subtract a coin once the blockchain call has suceeded, I've just done it here to show you how in the voucher script
 
@@ -158,6 +162,7 @@ namespace Oknan
             FindObjectOfType<AudioManager2>().Play("Pop");
             CoinsText.text = "Coins: " + GlobalManager.GetComponent<Global>().globalCoins.ToString();
             TransferMenu.SetActive(false);
+            Time.timeScale = 1;
         }
 
         public void CloseContractMenu()
@@ -171,6 +176,25 @@ namespace Oknan
         {
             FindObjectOfType<AudioManager2>().Play("Pop");
             MarketplaceMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
+
+        public void OpenNFTMenu()
+        {
+            nFTMenu.SetActive(true);
+        }
+
+        public void CloseNFTMenu()
+        {
+            nFTMenu.SetActive(false); 
+        }
+
+        public void Quit()
+        {
+            // Clear Account
+            PlayerPrefs.SetString("Account", "0x0000000000000000000000000000000000000001");
+            // go to login scene
+            SceneManager.LoadScene(0);
         }
 
 

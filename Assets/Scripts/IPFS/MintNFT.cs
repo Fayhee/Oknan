@@ -1,58 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using Models;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MintNFT : MonoBehaviour
 {
 
     // Start is called before the first frame update
-    public string chain = "ethereum";
-    public string network = "rinkeby"; // mainnet ropsten kovan rinkeby goerli
-    public string account = "0xcdAd1bA42d996581e6e83158Fd13b3eEF20BaCD0";
-    public TMP_Text theAccount;
+    private string chain = "ethereum";
+    private string network = "goerli"; // mainnet ropsten kovan rinkeby goerli
+    private string account;
     public TMP_Text theCID;
     private string cid;
     private string to;
+    public GameObject SuccessPopup;
+    public TMP_Text responseText;
 
     async public void MintButtonPK()
     {
-
-
-        to = theAccount.text;
+        account = PlayerPrefs.GetString("Account"); // the account calling the mint functions      
+        to = account;
         cid = theCID.text;
-        CreateMintModel.Response nftResponse = await EVM.CreateMint(chain, network, account, to, cid, " "); // i added another string
-        if (nftResponse != null)
-        {
-            Debug.Log("CID: " + nftResponse.cid);
-            Debug.Log("Connection: " + nftResponse.connection);
-            Debug.Log("TC Account: " + nftResponse.tx.account);
-            Debug.Log("TX Data: " + nftResponse.tx.data);
-            Debug.Log("TX Value: " + nftResponse.tx.value);
-            Debug.Log("TX Gas Limit: " + nftResponse.tx.gasLimit);
-            Debug.Log("TX Gas Price: " + nftResponse.tx.gasPrice);
-            Debug.Log("Hashed Unsigned TX: " + nftResponse.hashedUnsignedTx);
-            string chainId = await EVM.ChainId(chain, network, "");
-            Debug.Log("Chain Id: " + chainId);
-            string gasPrice1 = await EVM.GasPrice(chain, network, "");
-            Debug.Log("Gas Price: " + gasPrice1);
+        string type721 = "1155";
+        CreateMintModel.Response nftResponse = await EVM.CreateMint(chain, network, account, to, cid, type721);
+        // connects to user's browser wallet (metamask) to send a transaction
 
-            // private key of account
-            string privateKey = " ";
-            Debug.Log("Account: " + account);
-            string transaction = await EVM.CreateTransaction(chain, network, nftResponse.tx.account,
-                nftResponse.tx.to, nftResponse.tx.value, nftResponse.tx.data,
-                nftResponse.tx.gasPrice, nftResponse.tx.gasLimit);
-            Debug.Log("Transaction: " + transaction);
-            string signature = Web3PrivateKey.SignTransaction(privateKey, transaction, chainId);
-            Debug.Log("Signature: " + signature);
-            //string rpc = "";
-            string responseBroadcast = await EVM.BroadcastTransaction(chain, network, nftResponse.tx.account,
-                nftResponse.tx.to, nftResponse.tx.value, nftResponse.tx.data, signature,
-                nftResponse.tx.gasPrice, nftResponse.tx.gasLimit, "");
-            Debug.Log("Response: " + responseBroadcast);
+        try
+        {
+            string response = await Web3GL.SendTransactionData(nftResponse.tx.to, nftResponse.tx.value, nftResponse.tx.gasPrice, nftResponse.tx.gasLimit, nftResponse.tx.data);
+            print("Response: " + response);
+            SuccessPopup.SetActive(true);
+            responseText.text = "Success!";
+        }
+        catch (Exception e)
+        {
+            Debug.LogException(e, this);
         }
     }
 }
