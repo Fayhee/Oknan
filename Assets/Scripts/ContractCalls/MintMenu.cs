@@ -9,7 +9,6 @@ using UnityEngine;
 #if UNITY_WEBGL
 public class MintMenu : MonoBehaviour
 {
-    // This script has been moved from the MintWebGL1155.cs example in the Minter scripts folder to show you how to make additional changes
     public GameObject SuccessPopup;
     public Text responseText;
 

@@ -9,7 +9,6 @@ using TMPro;
 #if UNITY_WEBGL
 public class TransferMenu: MonoBehaviour
 {
-    // This script has been moved from the WebGLTransfer20.cs example in the WebGL scripts folder to show you how to make additional changes
     public GameObject SuccessPopup;
     public Text responseText;
     public string contract = "0xed7f68Ed23bB75841ab1448A95fa19aA46e9EA3E";

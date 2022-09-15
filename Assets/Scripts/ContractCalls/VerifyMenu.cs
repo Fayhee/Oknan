@@ -7,7 +7,6 @@ using UnityEngine;
 
 #if UNITY_WEBGL
 
-// This script has been moved from the VerifyExmaple.cs example in the EVM scripts folder to show you how to make additional changes
 public class VerifyMenu : MonoBehaviour
 {
     public GameObject SuccessPopup;

@@ -8,7 +8,6 @@ using UnityEngine.Networking; // needed for web requests
 #if UNITY_WEBGL
 public class VoucherMenu : MonoBehaviour
 {
-    // This script has been moved from the GetVoucherWebGL1155.cs example in the Minter scripts folder to show you how to make additional changes
     public GameObject SuccessPopup;
     public GameObject IPFSImageHolder;
     public GameObject IPFSImage;

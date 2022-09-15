@@ -5,8 +5,7 @@ using UnityEngine.UI; // needed when accessing text elements
 using UnityEngine;
 
 public class ContractMenu : MonoBehaviour
-{
-    // This script has been moved from the CustomCallExample.cs example in the EVM scripts folder to show you how to make additional changes
+{   
     string chain = "ethereum";
     // set network mainnet, testnet
     string network = "goerli";

@@ -12,7 +12,6 @@ using UnityEngine.UI;
 #if UNITY_WEBGL
 public class MarketplaceSellNFT : MonoBehaviour
     {
-        // This script has been moved from the ListNFTWebGL.cs example in the Minter scripts folder to show you how to make additional changes
         private string chain = "ethereum";
         private string network = "goerli";
         private string _itemPrice = "0.001";

@@ -7,7 +7,6 @@ using UnityEngine;
 #if UNITY_WEBGL
 public class SignMenu : MonoBehaviour
 {
-    // This script has been moved from the WebGLSignMessageExmaple.cs example in the WebGL scripts folder to show you how to make additional changes
     public GameObject SuccessPopup;
     public Text responseText;
     public string message = "This is a test message to sign";

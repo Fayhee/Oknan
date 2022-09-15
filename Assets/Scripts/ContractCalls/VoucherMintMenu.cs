@@ -9,7 +9,6 @@ using UnityEngine;
 #if UNITY_WEBGL
 public class VoucherMintMenu : MonoBehaviour
 {
-    // This script has been moved from the MintWebGL721.cs example in the Minter scripts folder to show you how to make additional changes
     public GameObject SuccessPopup;
     public Text responseText;
     // used for speed bonus on successful mint
