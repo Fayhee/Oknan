@@ -15,13 +15,22 @@
  Buy NFTs from MarketPlace - https://github.com/Fayhee/Oknan/blob/main/Assets/Scripts/ContractCalls/MarketplaceListedNFT.cs
  Sell NFTs inMarketPlace - https://github.com/Fayhee/Oknan/blob/main/Assets/Scripts/ContractCalls/MarketplaceSellNFT.cs
  
- # Minting NFTS
+# Minting NFTS
   Players can Mint NFTs directly to their accounts in Oknan, they simply provided the CID for the data to be included in the NFTs.
   
   Mint NFTs - https://github.com/Fayhee/Oknan/blob/main/Assets/Scripts/IPFS/MintNFT.cs
 
 
  
- IPfs Intergration
+# IPfs Intergration
+ 
+ Capture NFT Image - https://github.com/Fayhee/Oknan/blob/main/Assets/Scripts/IPFS/CaptureImage.cs
+
+ NFTMetaData - https://github.com/Fayhee/Oknan/blob/main/Assets/Scripts/IPFS/NftMetaData.cs
+
+ Display Info from NFT - https://github.com/Fayhee/Oknan/blob/main/Assets/Scripts/IPFS/NFTDisplayInfo.cs
+
+ Get Info from NFT - https://github.com/Fayhee/Oknan/blob/main/Assets/Scripts/IPFS/NFTData.cs
+
  
  
