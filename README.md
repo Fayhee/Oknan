@@ -31,6 +31,9 @@
  Display Info from NFT - https://github.com/Fayhee/Oknan/blob/main/Assets/Scripts/IPFS/NFTDisplayInfo.cs
 
  Get Info from NFT - https://github.com/Fayhee/Oknan/blob/main/Assets/Scripts/IPFS/NFTData.cs
+ 
+# GAme Demo
+ https://mekury.itch.io/oknan
 
  
  
