@@ -10,7 +10,16 @@
  The Player’s account must be given approval by the minting interface.
  The list of minted marketplace items is gotten in the marketplace window. 
  These shows all NFT's that have been minted and have been listed for sale.The player can easily purchase these items in game. 
- We also Provided a way the player can see the list of the NFTs they minted for sale 
+ We also Provided a way the player can see the list of the NFTs they minted for sale.
+ 
+ Buy NFTs from MarketPlace - https://github.com/Fayhee/Oknan/blob/main/Assets/Scripts/ContractCalls/MarketplaceListedNFT.cs
+ Sell NFTs inMarketPlace - https://github.com/Fayhee/Oknan/blob/main/Assets/Scripts/ContractCalls/MarketplaceSellNFT.cs
+ 
+ # Minting NFTS
+  Players can Mint NFTs directly to their accounts in Oknan, they simply provided the CID for the data to be included in the NFTs.
+  
+  Mint NFTs - https://github.com/Fayhee/Oknan/blob/main/Assets/Scripts/IPFS/MintNFT.cs
+
 
  
  IPfs Intergration
